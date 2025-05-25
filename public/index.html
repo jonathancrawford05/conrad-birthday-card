@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>🎉 Conrad's 8th Birthday Card 🎉</title>
     <style>
         * {
@@ -115,14 +115,54 @@
         }
 
         @media (max-width: 768px) {
-            .card { height: 400px; }
-            .card-container { max-width: 90%; }
-            .flip-instruction { font-size: 0.9rem; padding: 8px 16px; }
+            .card { 
+                height: 70vh;
+                max-height: 500px;
+                min-height: 350px;
+            }
+            .card-container { 
+                max-width: 95%; 
+                padding: 10px;
+            }
+            .flip-instruction { 
+                font-size: 0.9rem; 
+                padding: 8px 16px;
+                bottom: 10px;
+            }
+            body {
+                padding: 10px;
+            }
         }
 
         @media (max-width: 480px) {
-            .card { height: 350px; }
-            .flip-instruction { font-size: 0.8rem; padding: 6px 12px; }
+            .card { 
+                height: 60vh;
+                max-height: 400px;
+                min-height: 300px;
+            }
+            .card-container {
+                max-width: 98%;
+            }
+            .flip-instruction { 
+                font-size: 0.8rem; 
+                padding: 6px 12px;
+                bottom: 8px;
+            }
+            body {
+                padding: 5px;
+            }
+        }
+
+        @media (max-width: 320px) {
+            .card { 
+                height: 55vh;
+                max-height: 350px;
+                min-height: 280px;
+            }
+            .flip-instruction { 
+                font-size: 0.7rem; 
+                padding: 5px 10px;
+            }
         }
     </style>
 </head>
