@@ -56,7 +56,7 @@
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             text-align: center;
             padding: 30px;
@@ -76,32 +76,33 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(1px);
+            background: rgba(0, 0, 0, 0.15);
         }
 
         .card-front-content {
             position: relative;
             z-index: 2;
             background: rgba(255, 255, 255, 0.95);
-            padding: 25px;
+            padding: 30px;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             backdrop-filter: blur(10px);
             border: 2px solid rgba(255, 182, 193, 0.4);
-            margin-top: auto;
+            max-width: 500px;
         }
 
         .card-back {
             background: linear-gradient(45deg, #98FB98, #F0FFF0);
             color: #2D5016;
             transform: rotateY(180deg);
+            justify-content: flex-start;
+            padding-top: 40px;
         }
 
         .birthday-title {
             font-size: 2.2rem;
             font-weight: bold;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             color: #2E8B57;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
             animation: bounce 2s ease-in-out infinite;
@@ -114,11 +115,11 @@
         }
 
         .age-display {
-            font-size: 3.5rem;
+            font-size: 4rem;
             font-weight: bold;
             color: #FF6347;
             text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
-            margin: 15px 0;
+            margin: 20px 0;
             animation: pulse 2s ease-in-out infinite;
         }
 
@@ -128,10 +129,9 @@
         }
 
         .message {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             line-height: 1.6;
             margin: 15px 0;
-            max-width: 600px;
             color: #2E8B57;
             font-weight: 600;
         }
@@ -163,18 +163,19 @@
 
         .flip-instruction {
             position: absolute;
-            bottom: 15px;
+            bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
-            font-size: 0.9rem;
+            font-size: 1rem;
             opacity: 0.9;
             animation: blink 2s ease-in-out infinite;
             color: #2E8B57;
             font-weight: bold;
             background: rgba(255, 255, 255, 0.9);
-            padding: 8px 16px;
-            border-radius: 20px;
+            padding: 10px 20px;
+            border-radius: 25px;
             z-index: 3;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
 
         @keyframes blink {
@@ -188,10 +189,11 @@
             padding: 20px 30px;
             border-radius: 25px;
             font-weight: bold;
-            margin: 25px 0;
+            margin-bottom: 30px;
             box-shadow: 0 6px 12px rgba(0,0,0,0.3);
             animation: achievementGlow 3s ease-in-out infinite;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
+            text-align: center;
         }
 
         @keyframes achievementGlow {
@@ -203,20 +205,27 @@
             font-size: 1.1rem;
             line-height: 1.8;
             max-width: 650px;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 30px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 35px;
             border-radius: 15px;
             box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            text-align: left;
+            color: #2D5016;
+        }
+
+        .back-message strong {
+            color: #1B4D00;
         }
 
         @media (max-width: 768px) {
-            .birthday-title { font-size: 1.6rem; }
-            .age-display { font-size: 2.8rem; }
+            .birthday-title { font-size: 1.8rem; }
+            .age-display { font-size: 3rem; }
             .message { font-size: 1rem; }
             .card { height: 500px; }
             .card-face { padding: 20px; }
-            .card-front-content { padding: 20px; }
-            .back-message { padding: 20px; font-size: 1rem; }
+            .card-front-content { padding: 25px; }
+            .back-message { padding: 25px; font-size: 1rem; }
+            .achievement-badge { font-size: 1rem; padding: 15px 20px; }
         }
     </style>
 </head>
@@ -301,7 +310,7 @@
         }
 
         // Generate petals continuously
-        setInterval(createPetal, 200);
+        setInterval(createPetal, 300);
 
         // Keyboard interaction
         document.addEventListener('keydown', function(e) {
@@ -337,6 +346,7 @@
             sparkle.style.top = Math.random() * 100 + '%';
             sparkle.style.animation = 'sparkle 2s ease-in-out infinite';
             sparkle.style.pointerEvents = 'none';
+            sparkle.style.zIndex = '2';
             
             document.querySelector('.cherry-blossoms').appendChild(sparkle);
             
@@ -355,7 +365,7 @@
         `;
         document.head.appendChild(style);
 
-        setInterval(createSparkle, 1000);
+        setInterval(createSparkle, 1500);
     </script>
 </body>
 </html>
