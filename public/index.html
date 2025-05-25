@@ -56,14 +56,13 @@
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
             text-align: center;
             padding: 30px;
         }
 
         .card-front {
-            background: white;
             background-image: url('conrad-front.png');
             background-size: cover;
             background-position: center;
@@ -77,7 +76,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.1);
             backdrop-filter: blur(1px);
         }
 
@@ -85,11 +84,12 @@
             position: relative;
             z-index: 2;
             background: rgba(255, 255, 255, 0.95);
-            padding: 40px;
+            padding: 25px;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             backdrop-filter: blur(10px);
-            border: 2px solid rgba(255, 182, 193, 0.3);
+            border: 2px solid rgba(255, 182, 193, 0.4);
+            margin-top: auto;
         }
 
         .card-back {
@@ -101,7 +101,7 @@
         .birthday-title {
             font-size: 2.2rem;
             font-weight: bold;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             color: #2E8B57;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
             animation: bounce 2s ease-in-out infinite;
@@ -111,28 +111,6 @@
             0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
             40% { transform: translateY(-8px); }
             60% { transform: translateY(-4px); }
-        }
-
-        .custom-image {
-            width: 200px;
-            height: 150px;
-            margin: 20px 0;
-            border-radius: 10px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-            animation: glow 3s ease-in-out infinite;
-            background: linear-gradient(135deg, #FFB6C1, #98FB98);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #2E8B57;
-            font-weight: bold;
-            text-align: center;
-            font-size: 0.9rem;
-        }
-
-        @keyframes glow {
-            0%, 100% { box-shadow: 0 8px 16px rgba(0,0,0,0.3); }
-            50% { box-shadow: 0 8px 25px rgba(255, 182, 193, 0.6); }
         }
 
         .age-display {
@@ -189,18 +167,19 @@
             left: 50%;
             transform: translateX(-50%);
             font-size: 0.9rem;
-            opacity: 0.8;
+            opacity: 0.9;
             animation: blink 2s ease-in-out infinite;
             color: #2E8B57;
             font-weight: bold;
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.9);
             padding: 8px 16px;
             border-radius: 20px;
+            z-index: 3;
         }
 
         @keyframes blink {
-            0%, 100% { opacity: 0.8; }
-            50% { opacity: 0.4; }
+            0%, 100% { opacity: 0.9; }
+            50% { opacity: 0.5; }
         }
 
         .achievement-badge {
@@ -236,8 +215,7 @@
             .message { font-size: 1rem; }
             .card { height: 500px; }
             .card-face { padding: 20px; }
-            .custom-image { width: 160px; height: 120px; }
-            .card-front-content { padding: 25px; }
+            .card-front-content { padding: 20px; }
             .back-message { padding: 20px; font-size: 1rem; }
         }
     </style>
@@ -254,10 +232,6 @@
                 <div class="card-front-content">
                     <div class="birthday-title">
                         🌸 HAPPY 8TH BIRTHDAY CONRAD! 🌸
-                    </div>
-                    
-                    <div class="custom-image">
-                        <!-- Your beautiful LEGO Minecraft cherry blossom artwork will show as background -->
                     </div>
                     
                     <div class="age-display">8</div>
